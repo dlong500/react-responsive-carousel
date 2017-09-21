@@ -73,6 +73,7 @@ describe("Slider", function() {
                 showArrows: true,
                 showStatus:true,
                 showThumbs:true,
+                thumbWidth: null,
                 infiniteLoop: false,
                 selectedItem: 0,
                 axis: 'horizontal',
