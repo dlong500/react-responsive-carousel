@@ -28,7 +28,7 @@ class Carousel extends Component {
         onClickThumb: PropTypes.func.isRequired,
         onChange: PropTypes.func.isRequired,
         axis: PropTypes.oneOf(['horizontal', 'vertical']),
-        width: customPropTypes.unit,
+        width: customPropTypes.unit.isRequired,
         useKeyboardArrows: PropTypes.bool,
         autoPlay: PropTypes.bool,
         stopOnHover: PropTypes.bool,
