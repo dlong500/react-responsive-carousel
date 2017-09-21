@@ -22,7 +22,7 @@ class Carousel extends Component {
         showIndicators: PropTypes.bool,
         infiniteLoop: PropTypes.bool,
         showThumbs: PropTypes.bool,
-        thumbWidth: customPropTypes.unit,
+        thumbWidth: PropTypes.number,
         selectedItem: PropTypes.number,
         onClickItem: PropTypes.func.isRequired,
         onClickThumb: PropTypes.func.isRequired,
