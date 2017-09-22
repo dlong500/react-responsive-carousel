@@ -34,6 +34,7 @@ class Thumbs extends Component {
     }
 
     componentDidMount (nextProps) {
+        console.log('Thumbs-CDM')
         if (!this.props.children) {
             return;
         }
@@ -61,11 +62,12 @@ class Thumbs extends Component {
     }
 
     setupThumbs () {
+        console.log('Thumbs-setupThumbs')
         // as the widths are calculated, we need to resize
         // the carousel when the window is resized
-        window.addEventListener("resize", this.updateSizes);
+        window.addEventListener("resize", () => { console.log('Thumbs-resize'); this.updateSizes; });
         // issue #2 - image loading smaller
-        window.addEventListener("DOMContentLoaded", this.updateSizes);
+        window.addEventListener("DOMContentLoaded", () => { console.log('Thumbs-DOMContentLoaded'); this.updateSizes; });
 
         const images = this.getImages();
 
@@ -90,6 +92,7 @@ class Thumbs extends Component {
     }
 
     updateSizes = () => {
+        console.log('Thumbs-updateSizes')
         if (!this.state.initialized) {
             return;
         }
@@ -100,9 +103,11 @@ class Thumbs extends Component {
         this.visibleItems = Math.floor(this.wrapperSize / this.itemSize);
         this.lastPosition = total - this.visibleItems;
         this.showArrows = this.visibleItems < total;
+        console.log('itemSize:', this.itemSize)
     }
 
     getImages() {
+        console.log('Thumbs-getImages')
         const images = React.Children.map(this.props.children, (item, index) => {
             let img = item;
 
@@ -128,6 +133,7 @@ class Thumbs extends Component {
     }
 
     setMountState = () => {
+        console.log('Thumbs-setMountState')
         this.setState({hasMount: true});
         this.updateSizes();
     }
@@ -209,6 +215,7 @@ class Thumbs extends Component {
     }
 
     getFirstItem (selectedItem) {
+        console.log('Thumbs-getFirstItem')
         if (!this.showArrows) {
             return 0;
         }
