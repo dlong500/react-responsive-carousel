@@ -37,7 +37,8 @@
     "publish-to-gh-pages": "node --harmony ./node_modules/gulp/bin/gulp publish",
     "storybook": "start-storybook -p 9001 -s ./src -c .storybook",
     "build-storybook": "build-storybook -s ./src -o ./dist/storybook",
-    "changelog": "node ./generate-changelog.js"
+    "changelog": "node ./generate-changelog.js",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
