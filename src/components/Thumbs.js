@@ -79,6 +79,11 @@ class Thumbs extends Component {
             this.updateSizes();
         });
 
+        window.addEventListener("load", () => {
+            console.log('Thumbs-load');
+            this.updateSizes();
+        });
+
         const images = this.getImages();
 
         if (!images) {
