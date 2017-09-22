@@ -99,6 +99,7 @@ class Thumbs extends Component {
 
         const total = this.props.children.length;
         this.wrapperSize = this.itemsWrapper.clientWidth;
+        console.log('this.refs:', this.refs)
         this.itemSize = outerWidth(this.refs.thumb0);
         this.visibleItems = Math.floor(this.wrapperSize / this.itemSize);
         this.lastPosition = total - this.visibleItems;
