@@ -68,6 +68,7 @@ class Thumbs extends Component {
         window.addEventListener("resize", () => { console.log('Thumbs-resize'); this.updateSizes; });
         // issue #2 - image loading smaller
         window.addEventListener("DOMContentLoaded", () => { console.log('Thumbs-DOMContentLoaded'); this.updateSizes; });
+        window.addEventListener("pageshow", () => { console.log('Thumbs-pageshow'); this.updateSizes; });
 
         const images = this.getImages();
 
@@ -99,7 +100,7 @@ class Thumbs extends Component {
 
         const total = this.props.children.length;
         this.wrapperSize = this.itemsWrapper.clientWidth;
-        console.log('this.refs:', this.refs)
+        console.log('this.refs.thumb0.offsetWidth:', this.refs.thumb0.offsetWidth)
         this.itemSize = outerWidth(this.refs.thumb0);
         this.visibleItems = Math.floor(this.wrapperSize / this.itemSize);
         this.lastPosition = total - this.visibleItems;
