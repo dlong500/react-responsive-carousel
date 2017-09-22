@@ -65,10 +65,19 @@ class Thumbs extends Component {
         console.log('Thumbs-setupThumbs')
         // as the widths are calculated, we need to resize
         // the carousel when the window is resized
-        window.addEventListener("resize", () => { console.log('Thumbs-resize'); this.updateSizes; });
+        window.addEventListener("resize", function () {
+            console.log('Thumbs-resize');
+            this.updateSizes;
+        });
         // issue #2 - image loading smaller
-        window.addEventListener("DOMContentLoaded", () => { console.log('Thumbs-DOMContentLoaded'); this.updateSizes; });
-        window.addEventListener("pageshow", () => { console.log('Thumbs-pageshow'); this.updateSizes; });
+        window.addEventListener("DOMContentLoaded", function () {
+            console.log('Thumbs-DOMContentLoaded');
+            this.updateSizes;
+        });
+        window.addEventListener("pageshow", function () {
+            console.log('Thumbs-pageshow');
+            this.updateSizes;
+        });
 
         const images = this.getImages();
 
