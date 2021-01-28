@@ -202,19 +202,22 @@ export default class Thumbs extends Component<Props, State> {
     };
 
     slideRight = (positions?: number) => {
+        console.log('slideRight:', positions);
         this.moveTo(this.state.firstItem - (typeof positions === 'number' ? positions : 1));
     };
 
     slideLeft = (positions?: number) => {
+        console.log('slideLeft:', positions);
         this.moveTo(this.state.firstItem + (typeof positions === 'number' ? positions : 1));
     };
 
     moveTo = (position: number) => {
+        console.log('moveTo:', position);
         // position can't be lower than 0
         position = position < 0 ? 0 : position;
         // position can't be higher than last postion
         position = position >= this.state.lastPosition ? this.state.lastPosition : position;
-
+        console.log('moveTo-firstItem:', position);
         this.setState({
             firstItem: position,
         });
@@ -235,6 +238,7 @@ export default class Thumbs extends Component<Props, State> {
             firstItem = selectedItem;
         }
 
+        console.log('getFirstItem:', selectedItem, firstItem);
         return firstItem;
     }
 
